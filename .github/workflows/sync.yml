@@ -1,8 +1,6 @@
 name: Sync with Upstream
 
 on:
-  schedule:
-    - cron: '0 0 * * *'  # Runs daily at midnight UTC
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
@@ -16,7 +14,7 @@ jobs:
 
       - name: Add upstream remote
         run: |
-          git remote add upstream https://github.com/fsevent/fsevent.git
+          git remote add upstream https://github.com/bangladesh-data/fsevents.git
           git fetch upstream
           git checkout master
           git merge upstream/master --no-edit || true
